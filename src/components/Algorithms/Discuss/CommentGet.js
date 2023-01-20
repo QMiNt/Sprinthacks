@@ -35,15 +35,11 @@ const CommentGet = () => {
     })();
   }, []);
 
-
-
   return (
     <>
       <Grid
         container
         className="display"
-        // alignItems="center"
-        // justifyContent="center"
       >
         <Box ml={5} mr={5} mt={3} pt={3} mb={1} pb={1}>
           <Grid
@@ -51,8 +47,6 @@ const CommentGet = () => {
             spacing={3}
             alignContent="flex-start"
             justify="center"
-            // display="flex"
-            // flexDirection="column"
           >
             {card.map((post, index) => {
               return (
@@ -64,8 +58,6 @@ const CommentGet = () => {
                       backgroundColor: "#49ab9480",
                       marginLeft: "170px",
                     }}
-                    // data-aos="fade-up"
-                    // data-aos-anchor-placement="bottom-bottom"
                   >
                     <CardContent>
                       <Typography
