@@ -5,7 +5,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-// import { Button, CardActionArea, CardActions } from "@mui/material";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import CommentIcon from "@mui/icons-material/Comment";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function ForumGet() {
   const [card, setCard] = useState([]);
@@ -38,20 +42,13 @@ export default function ForumGet() {
 
   return (
     <>
-      <Grid
-        container
-        className="display"
-        // alignItems="center"
-        // justifyContent="center"
-      >
+      <Grid container className="display">
         <Box ml={5} mr={5} mt={3} pt={3} mb={1} pb={1}>
           <Grid
             container
             spacing={3}
             alignContent="flex-start"
             justify="center"
-            // display="flex"
-            // flexDirection="column"
           >
             {card.map((post, index) => {
               return (
@@ -63,8 +60,6 @@ export default function ForumGet() {
                       backgroundColor: "#49ab9480",
                       marginLeft: "170px",
                     }}
-                    // data-aos="fade-up"
-                    // data-aos-anchor-placement="bottom-bottom"
                   >
                     <CardMedia
                       component="img"
@@ -73,59 +68,86 @@ export default function ForumGet() {
                       src={post.images_post}
                     />
                     <CardContent>
-                      <Typography
-                        style={{ color: "black" }}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
+                      <div style={{ display: "flex", flexDirection: "row" }}>
+                        <h2>Posted by:&nbsp;</h2>
+                        <Typography
+                          style={{ color: "black" }}
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                        >
+                          {post.owner.username}
+                        </Typography>
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "row" }}>
+                        <h2>Title:&nbsp;</h2>
+                        <Typography
+                          style={{ color: "black" }}
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                        >
+                          {post.title}
+                        </Typography>
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "row" }}>
+                        <h2>Content:&nbsp;</h2>
+                        <Typography
+                          style={{ color: "black" }}
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                        >
+                          {post.body}
+                        </Typography>
+                      </div>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          justifyContent: "space-around",
+                        }}
                       >
-                        {post.owner.username}
-                      </Typography>
-                      <h2>Title</h2>
-                      <Typography
-                        style={{ color: "black" }}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                      >
-                        {post.title}
-                      </Typography>
-                      <h2>Content</h2>
-                      <Typography
-                        style={{ color: "black" }}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                      >
-                        {post.body}
-                      </Typography>
-                      <h2>Likes</h2>
-                      <Typography
-                        style={{ color: "black" }}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                      >
-                        {post.like_on_post_count}
-                      </Typography>
-                      <h2>Comments</h2>
-                      <Typography
-                        style={{ color: "black" }}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                      >
-                        {post.comment_on_post_count}
-                      </Typography>
-                      <h2>Votes</h2>
-                      <Typography
-                        style={{ color: "black" }}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                      >
-                        {post.votes_on_post}
-                      </Typography>
+                        <div>
+                          <Button>
+                            <FavoriteIcon />
+                          </Button>
+                          <Typography
+                            style={{ color: "black" }}
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                          >
+                            {post.like_on_post_count}
+                          </Typography>
+                        </div>
+                        <div>
+                          <Link to={{ pathname: "/comments/" + post.id }}>
+                            <CommentIcon />
+                          </Link>
+                          <Typography
+                            style={{ color: "black" }}
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                          >
+                            {post.comment_on_post_count}
+                          </Typography>
+                        </div>
+                        <div>
+                          <Button>
+                            <ThumbUpIcon />
+                          </Button>
+                          <Typography
+                            style={{ color: "black" }}
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                          >
+                            {post.votes_on_post}
+                          </Typography>
+                        </div>
+                      </div>
                     </CardContent>
                   </Card>
                 </Grid>
