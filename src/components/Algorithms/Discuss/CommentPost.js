@@ -10,16 +10,13 @@ import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import CloseIcon from "@mui/icons-material/Close";
 
-export default function ForumPost() {
-  let userid = sessionStorage.getItem("user_id");
-  let token = sessionStorage.getItem("token");
+const CommentPost = () => {
   const [open, setOpen] = React.useState(false);
-  // const [images_post, setImages_post] = React.useState(null);
-
+  let userid = sessionStorage.getItem("user_id");
   const [values, setValues] = useState({
-    title: "",
-    body: "",
     owner: userid,
+    group_post: 1,
+    body: "",
   });
 
   const handleChanges = (event) => {
@@ -30,35 +27,27 @@ export default function ForumPost() {
     console.log(values);
   };
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   const handleSubmit = (event) => {
-      event.preventDefault();
-      const data = new FormData(event.currentTarget);
-      console.log({
-        title: data.get("title"),
-        body: data.get("body"),
-      });
-      createpost();
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      title: data.get("title"),
+      body: data.get("body"),
+    });
+    createcomment();
   };
 
-  async function createpost() {
+  async function createcomment() {
     try {
       let token = sessionStorage.getItem("token");
       let result = await fetch(
-        "https://hacknova2.pythonanywhere.com/feed/posts/",
+        "https://hacknova2.pythonanywhere.com/feed/comments/",
         {
           method: "POST",
           body: JSON.stringify({
-            title: values.title,
-            body: values.body,
             owner: values.owner,
+            body: values.body,
+            group_post: values.group_post,
           }),
           headers: {
             Authorization: `token ${token}`,
@@ -74,10 +63,18 @@ export default function ForumPost() {
     }
   }
 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
-    <div>
+    <>
       <Button variant="outlined" onClick={handleClickOpen}>
-        Create new post
+        Create new comment
       </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogActions>
@@ -85,7 +82,7 @@ export default function ForumPost() {
             <CloseIcon />
           </Button>
         </DialogActions>
-        <DialogTitle>Create New Post</DialogTitle>
+        <DialogTitle>Write a comment</DialogTitle>
         <Divider />
         <DialogContent>
           <Grid container>
@@ -126,6 +123,8 @@ export default function ForumPost() {
           </Grid>
         </DialogContent>
       </Dialog>
-    </div>
+    </>
   );
-}
+};
+
+export default CommentPost;
