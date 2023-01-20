@@ -58,12 +58,12 @@ const Navbar = () => {
               }}
             >
               <span>
-                <Link className="headerLinks" to="/signup">
+                <Link to="/signup">
                   <MenuItem onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">Sign up</Typography>
                   </MenuItem>
                 </Link>
-                <Link className="headerLinks" to="/login">
+                <Link to="/login">
                   <MenuItem onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">Login</Typography>
                   </MenuItem>
@@ -80,10 +80,10 @@ const Navbar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <div style={{ margin: "auto",paddingTop:"50px" }}>
-              <Link className="headerLinks" to="/signup">
+              <Link to="/signup">
                 <button className="btn">Signup</button>
               </Link>
-              <Link className="headerLinks" to="/login">
+              <Link to="/login">
                 <button className="btn">Login</button>
               </Link>
             </div>
