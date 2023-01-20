@@ -9,13 +9,13 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import CloseIcon from "@mui/icons-material/Close";
-// import * as axios from 'axios';
+import axios from "axios";
 
 export default function ForumPost() {
   let userid = sessionStorage.getItem("user_id");
   let token = sessionStorage.getItem("token");
   const [open, setOpen] = React.useState(false);
-    const [images_post, setImages_post] = React.useState(null);
+  const [images_post, setImages_post] = React.useState(null);
   const [values, setValues] = useState({
     title: "",
     body: "",
@@ -47,7 +47,7 @@ export default function ForumPost() {
     setOpen(false);
   };
 
-  var axios = require("axios");
+  //   var axios = require("axios");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -86,15 +86,17 @@ export default function ForumPost() {
     //   content: data.get("content"),
     // });
     // createpost();
-    var FormData = require("form-data");
-    var data = new FormData();
-    data.append("title", values.title);
-    data.append("body", values.body);
-    data.append("owner", userid);
-    data.append("images_post", images_post, images_post.name);
+    // var FormData = require("form-data");
+    let formData = new FormData();
+    formData.append("title", values.title);
+    formData.append("body", values.body);
+    formData.append("owner", userid);
+    console.log(formData);
+    formData.append("images_post", images_post, images_post.name);
+    console.log(formData);
     let url = "https://hacknova2.pythonanywhere.com/feed/posts/";
     axios
-      .post(url, FormData, {
+      .post(url, formData, {
         headers: {
           Authorization: `Token ${token}`,
           Accept: "application/json",
@@ -191,7 +193,10 @@ export default function ForumPost() {
                   name="images_post"
                   type="file"
                   hidden
-                  onChange={(e)=>{setImages_post(e.target.files[0])}}
+                  onChange={(e) => {
+                    setImages_post(e.target.files[0]);
+                    console.log(e.target.files[0]);
+                  }}
                 />
               </Button>
               {/* <div style={{ paddingTop: "1rem" }}>
