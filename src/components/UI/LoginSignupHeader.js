@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
-import "./Header.css"
+import "./LoginSignupHeader.css"
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
