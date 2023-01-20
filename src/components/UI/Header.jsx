@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../images/logo-text.png";
+import profile from "../../images/pfp.png";
 
 const Header = () => {
   return (
@@ -9,7 +11,11 @@ const Header = () => {
           <div className="input-group icons">
             <div className="input-group-prepend">
               <Link to="/">
-                <img src="" alt="logo" />
+                <img
+                  src={logo}
+                  alt="logo"
+                  style={{ width: "150px", marginRight: "20px" }}
+                />
               </Link>
             </div>
             <input
@@ -38,7 +44,12 @@ const Header = () => {
         <div className="header-right">
           <ul className="clearfix">
             <li className="icons dropdown d-none d-md-flex">
-              <Link to="/contests" className="log-user" data-toggle="dropdown">
+              <Link to="/" className="log-user">
+                <span>Home</span>
+              </Link>
+            </li>
+            <li className="icons dropdown d-none d-md-flex">
+              <Link to="/contests" className="log-user">
                 <span>Contests</span>
               </Link>
             </li>
@@ -95,7 +106,7 @@ const Header = () => {
               >
                 <span className="activity active"></span>
                 <Link to="/profile">
-                  <img src="images/user/1.png" height="40" width="40" alt="" />
+                  <img src={profile} height="40" width="40" alt="" />
                 </Link>
               </div>
               <div className="drop-down dropdown-profile animated fadeIn dropdown-menu">

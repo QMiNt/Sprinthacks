@@ -1,4 +1,5 @@
 import React from "react";
+import profile from "../images/pfp.png";
 
 const Profile = () => {
   return (
@@ -11,49 +12,46 @@ const Profile = () => {
                 <div className="media align-items-center mb-4">
                   <img
                     className="mr-3"
-                    src="images/avatar/11.png"
+                    src={profile}
                     width="80"
                     height="80"
                     alt="profile-img"
                   />
                   <div className="media-body">
-                    <h3 className="mb-0">First</h3>
-                    <p className="text-muted mb-0">Last</p>
+                    <h3 className="mb-0">Jay</h3>
+                    <p className="text-muted mb-0">Jain</p>
                   </div>
                 </div>
                 <div className="row mb-5">
                   <div className="col">
                     <div className="card card-profile text-center">
                       <span className="mb-1 text-primary">
-                        <i className="icon-people"></i>
+                        <i className=""></i>
                       </span>
                     </div>
                   </div>
                   <div className="col">
                     <div className="card card-profile text-center">
                       <span className="mb-1 text-warning">
-                        <i className="icon-user-follow"></i>
+                        <i className=""></i>
                       </span>
                     </div>
                   </div>
                 </div>
                 <h4>About Me</h4>
-                <p className="text-muted">
-                  Hi, I'm Pikamy, has been the industry standard dummy text ever
-                  since the 1500s.
-                </p>
+                <p className="text-muted">Hi, I'm Jay, I'm a dev</p>
                 <h4>Interests</h4>
                 <p className="text-muted">React, Django</p>
                 <h4>Education</h4>
-                <p className="text-muted">React, Django</p>
+                <p className="text-muted">B.Tech</p>
                 <ul className="card-profile__info">
                   <li className="mb-1">
                     <strong className="text-dark mr-4">Designation</strong>
-                    <span>01793931609</span>
+                    <span>Frontend Developer</span>
                   </li>
                   <li>
                     <strong className="text-dark mr-4">Email</strong>
-                    <span>name@domain.com</span>
+                    <span>jay4emails@gmail.com</span>
                   </li>
                 </ul>
               </div>
