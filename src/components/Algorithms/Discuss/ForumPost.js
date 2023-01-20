@@ -9,17 +9,19 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import CloseIcon from "@mui/icons-material/Close";
+// import * as axios from 'axios';
 
 export default function ForumPost() {
   let userid = sessionStorage.getItem("user_id");
   let token = sessionStorage.getItem("token");
   const [open, setOpen] = React.useState(false);
-  const [images_post, setImages_post] = React.useState(null);
+    const [images_post, setImages_post] = React.useState(null);
   const [values, setValues] = useState({
     title: "",
     body: "",
     owner: userid,
     youtube_link: "",
+    // images_post: null,
   });
 
   const handleChanges = (event) => {
@@ -30,8 +32,11 @@ export default function ForumPost() {
     console.log(values);
   };
 
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
+  const handleImageChange = (e) => {
+    setValues({
+      ...values,
+      image: e.target.files[0],
+    });
   };
 
   const handleClickOpen = () => {
@@ -46,91 +51,60 @@ export default function ForumPost() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    var FormData = require("form-data");
-    var fs = require("fs");
-    var data = new FormData();
-    data.append("title", "dsa");
-    data.append("body", "hello");
-    data.append("owner", "2");
-    data.append(
-      "images_post",
-      fs.createReadStream("/C:/Users/ACER/Downloads/dmw etl2.jpeg")
-    );
+    // var FormData = require("form-data");
+    // var fs = require("fs");
+    // var data = new FormData();
+    // data.append("title", "dsa");
+    // data.append("body", "hello");
+    // data.append("owner", "2");
+    // data.append(
+    //   "images_post",
+    //   fs.createReadStream("/C:/Users/ACER/Downloads/dmw etl2.jpeg")
+    // );
 
-    var config = {
-      method: "post",
-      url: "https://hacknova2.pythonanywhere.com/feed/posts/",
-      headers: {
-        Authorization: `Token ${token}`,
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      data: data,
-    };
+    // var config = {
+    //   method: "post",
+    //   url: "https://hacknova2.pythonanywhere.com/feed/posts/",
+    //   headers: {
+    //     Authorization: `Token ${token}`,
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    //   data: data,
+    // };
 
-    axios(config)
-      .then(function (response) {
-        console.log(JSON.stringify(response.data));
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    // axios(config)
+    //   .then(function (response) {
+    //     console.log(JSON.stringify(response.data));
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
     // const data = new FormData(event.currentTarget);
     // console.log({
     //   title: data.get("title"),
     //   content: data.get("content"),
     // });
     // createpost();
-    // var FormData = require("form-data");
-    // var fs = require("fs");
-    // var data = new FormData();
-    // data.append("title", values.title);
-    // data.append("body", values.body);
-    // data.append("owner", userid);
-    // data.append(
-    //   "images_post",
-    //   images_post, images_post.name
-    // );
-    // let url = "https://hacknova2.pythonanywhere.com/feed/posts/";
-    // axios
-    //   .post(url, FormData, {
-    //     headers: {
-    //       Authorization: `Token ${token}`,
-    //       Accept: "application/json",
-    //       "Content-Type": "application/json",
-    //     },
-    //   })
-    //   .then((res) => {
-    //     console.log(res.data);
-    //   })
-    //   .catch((err) => console.log(err));
-    // var myHeaders = new Headers();
-    // myHeaders.append(
-    //   "Authorization",
-    //   "Token 5facf17fb57a61b840fa714328e3497609462c1766ef773a1d3e7ae9e12f0dc8"
-    // );
-
-    // var formdata = new FormData();
-    // formdata.append("title", "dsa");
-    // formdata.append("body", "hello");
-    // formdata.append("owner", "2");
-    // formdata.append(
-    //   "images_post",
-    //   fileInput.files[0],
-    //   "/C:/Users/ACER/Downloads/dmw etl2.jpeg"
-    // );
-
-    // var requestOptions = {
-    //   method: "POST",
-    //   headers: myHeaders,
-    //   body: formdata,
-    //   redirect: "follow",
-    // };
-
-    // fetch("https://hacknova2.pythonanywhere.com/feed/posts/", requestOptions)
-    //   .then((response) => response.text())
-    //   .then((result) => console.log(result))
-    //   .catch((error) => console.log("error", error));
+    var FormData = require("form-data");
+    var data = new FormData();
+    data.append("title", values.title);
+    data.append("body", values.body);
+    data.append("owner", userid);
+    data.append("images_post", images_post, images_post.name);
+    let url = "https://hacknova2.pythonanywhere.com/feed/posts/";
+    axios
+      .post(url, FormData, {
+        headers: {
+          Authorization: `Token ${token}`,
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
   };
 
   async function createpost() {
@@ -198,8 +172,8 @@ export default function ForumPost() {
               </div>
               <div style={{ paddingTop: "1rem" }}>
                 <TextField
-                  id="content"
-                  name="content"
+                  id="body"
+                  name="body"
                   label="Content"
                   multiline
                   rows={4}
@@ -213,10 +187,11 @@ export default function ForumPost() {
               >
                 Choose image
                 <input
+                  id="images_post"
+                  name="images_post"
                   type="file"
-                  onChange={(e) => {
-                    setImages_post(e.target.files[0]);
-                  }}
+                  hidden
+                  onChange={(e)=>{setImages_post(e.target.files[0])}}
                 />
               </Button>
               {/* <div style={{ paddingTop: "1rem" }}>
