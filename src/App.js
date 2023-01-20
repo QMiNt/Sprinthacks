@@ -30,9 +30,9 @@ import Pathfinder from "./components/Algorithms/Visualize/VizAlgorithms/pathfind
 import Sort from "./components/Algorithms/Visualize/VizAlgorithms/sortComponents/sort";
 import ConvexHull from "./components/Algorithms/Visualize/VizAlgorithms/convexHullComponents/convexHull";
 import RecursiveSort from "./components/Algorithms/Visualize/VizAlgorithms/recursiveSortComponents/recursiveSort";
-import TuringMachine from "./components/Algorithms/Visualize/VizAlgorithms/turingComponents/turing";
-import Puzzle from "./components/Algorithms/Visualize/VizAlgorithms/puzzleComponents/puzzle";
-import Graph from "./components/Algorithms/Visualize/VizAlgorithms/graphComponents/graph";
+import TuringMachine from "./components/Algorithms/Visualize/VizAlgorithms/Turing Machine/turingMachine";
+import Puzzle from "./components/Algorithms/Visualize/VizAlgorithms/15puzzleComponents/puzzle";
+import Graph from "./components/Algorithms/Visualize/VizAlgorithms/Graph/graph";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CommentGet from "./components/Algorithms/Discuss/CommentGet";
@@ -62,7 +62,7 @@ function App() {
           <Route path="/visualize" element={<Visualize />} />
 
           <Route path="/visualize/prime" element={<Seive />} />
-          <Route path="/visualize/nqueen" element={<Queen />} />
+          <Route path="/visualize/nqueens" element={<Queen />} />
           <Route path="/visualize/pathfinder" element={<Pathfinder />} />
           <Route path="/visualize/sort" element={<Sort />} />
           <Route path="/visualize/convexhull" element={<ConvexHull />} />
