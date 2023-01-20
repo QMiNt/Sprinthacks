@@ -35,7 +35,10 @@ const Contests = () => {
             c.in_24_hours == "Yes" && (
               <tr key={index}>
                 <td>
-                  <a href={c.url}>{c.name}</a>;
+                  <a href={c.url} target="_blank">
+                    {c.name}
+                  </a>
+                  ;
                 </td>
                 <td>{c.start_time}</td>
                 <td>{c.end_time}</td>
@@ -46,7 +49,10 @@ const Contests = () => {
           ) : (
             <tr key={index}>
               <td>
-                <a href={c.url}>{c.name}</a>;
+                <a href={c.url} target="_blank">
+                  {c.name}
+                </a>
+                ;
               </td>
               <td>{c.start_time}</td>
               <td>{c.end_time}</td>
