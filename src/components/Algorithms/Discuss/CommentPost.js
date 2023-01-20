@@ -73,6 +73,9 @@ const CommentPost = () => {
 
   return (
     <>
+      <Button variant="outlined" onClick={handleClickOpen}>
+        Create new comment
+      </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogActions>
           <Button onClick={handleClose}>

@@ -9,7 +9,6 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import CommentIcon from "@mui/icons-material/Comment";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Button } from "@mui/material";
-import CommentPost from "./CommentPost";
 import { Link } from "react-router-dom";
 
 export default function ForumGet() {
@@ -21,58 +20,6 @@ export default function ForumGet() {
     group_post: 1,
     body: "",
   });
-
-  const handleChanges = (event) => {
-    setValues({
-      ...values,
-      [event.target.name]: event.target.value,
-    });
-    console.log(values);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      title: data.get("title"),
-      body: data.get("body"),
-    });
-    createcomment();
-  };
-
-  async function createcomment() {
-    try {
-      let token = sessionStorage.getItem("token");
-      let result = await fetch(
-        "https://hacknova2.pythonanywhere.com/feed/comments/",
-        {
-          method: "POST",
-          body: JSON.stringify({
-            owner: values.owner,
-            body: values.body,
-            group_post: values.group_post,
-          }),
-          headers: {
-            Authorization: `token ${token}`,
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      result = await result.json();
-      console.log(result);
-    } catch (error) {
-      console.log("Error" + error);
-    }
-  }
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   useEffect(() => {
     (async () => {
@@ -105,8 +52,6 @@ export default function ForumGet() {
       <Grid
         container
         className="display"
-        // alignItems="center"
-        // justifyContent="center"
       >
         <Box ml={5} mr={5} mt={3} pt={3} mb={1} pb={1}>
           <Grid
@@ -114,8 +59,6 @@ export default function ForumGet() {
             spacing={3}
             alignContent="flex-start"
             justify="center"
-            // display="flex"
-            // flexDirection="column"
           >
             {card.map((post, index) => {
               return (
@@ -127,8 +70,6 @@ export default function ForumGet() {
                       backgroundColor: "#49ab9480",
                       marginLeft: "170px",
                     }}
-                    // data-aos="fade-up"
-                    // data-aos-anchor-placement="bottom-bottom"
                   >
                     <CardMedia
                       component="img"
