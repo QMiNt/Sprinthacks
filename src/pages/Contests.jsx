@@ -15,7 +15,6 @@ const Contests = () => {
   }
   function handleCheck(e) {
     setChecked(!checked);
-    // console.log("da");
   }
 
   useEffect(() => {

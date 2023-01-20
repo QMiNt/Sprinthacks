@@ -3,22 +3,17 @@ import { Link } from "react-router-dom";
 
 const Card = (props) => {
   return (
-    <div className="card">
-      <Link to={props.link}>
-        <div className="card-header bg-white">
-          <h5 className="card-title">{props.title}</h5>
-          <h6 className="card-subtitle mb-2 text-muted">{props.subtitle}</h6>
-        </div>
-        <img className="img-fluid" src={props.img} alt="" />
-        <div className="card-body">
-          <p className="card-text">{props.desc}</p>
-        </div>
-        <div className="card-footer">
-          <Link to={props.link} className="card-link float-right">
-            <small>Card link</small>
+    <div className="col-lg-3">
+      <div className="service-item first-service">
+        <div className="icon"></div>
+        <h4>{props.title}</h4>
+        <p>{props.desc}</p>
+        <div className="text-button">
+          <Link to={props.link}>
+            Read More <i className="fa fa-arrow-right"></i>
           </Link>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

@@ -1,96 +1,57 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
+import React from "react";
 import { Link } from "react-router-dom";
-import { GiHamburgerMenu } from "react-icons/gi";
-import Container from "@mui/material/Container";
-import MenuItem from "@mui/material/MenuItem";
-import "./LoginSignupHeader.css"
+import logo from "../../images/logo-text.png";
+import profile from "../../images/pfp.png";
 
-const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
+const Header = () => {
   return (
-    <AppBar
-      style={{ background: "transparent", boxShadow: "none" }}
-      position="static"
+    <header
+      className="header-area header-sticky wow slideInDown"
+      data-wow-duration="0.75s"
+      data-wow-delay="0s"
     >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-            >
-              <GiHamburgerMenu style={{ fontColor: "black" }} />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              <span>
-                <Link to="/signup">
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">Sign up</Typography>
-                  </MenuItem>
-                </Link>
-                <Link to="/login">
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">Login</Typography>
-                  </MenuItem>
-                </Link>
-              </span>
-            </Menu>
-          </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-          >
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <div style={{ margin: "auto",paddingTop:"50px" }}>
-              <Link to="/signup">
-                <button className="btn">Signup</button>
-              </Link>
-              <Link to="/login">
-                <button className="btn">Login</button>
-              </Link>
-            </div>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <nav className="main-nav">
+              <a href="index.html" className="logo">
+                <img src={logo} alt="logo" />
+              </a>
+              <ul className="nav">
+                <li className="scroll-to-section">
+                  <Link to="/" className="active">
+                    Home
+                  </Link>
+                </li>
+                <li className="scroll-to-section">
+                  <Link to="/build">Build</Link>
+                </li>
+                <li className="scroll-to-section">
+                  <Link to="/visualize">Visualize</Link>
+                </li>
+                <li className="scroll-to-section">
+                  <Link to="/explain">Explain</Link>
+                </li>
+                <li className="scroll-to-section">
+                  <Link to="/discuss">Discuss</Link>
+                </li>
+                <li className="scroll-to-section">
+                  <Link to="/contests">Contests</Link>
+                </li>
+                <li>
+                  <div className="gradient-button">
+                    <a id="modal_trigger" href="#modal">
+                      <i className="fa fa-sign-in-alt"></i> Sign In Now
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
   );
 };
-export default Navbar;
+
+export default Header;
