@@ -9,13 +9,15 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 import CloseIcon from "@mui/icons-material/Close";
+import { useParams } from "react-router-dom";
 
 const CommentPost = () => {
   const [open, setOpen] = React.useState(false);
+  const { id } = useParams();
   let userid = sessionStorage.getItem("user_id");
   const [values, setValues] = useState({
     owner: userid,
-    group_post: 1,
+    group_post: id,
     body: "",
   });
 

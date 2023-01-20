@@ -1,5 +1,4 @@
 import React from "react";
-import CommentGet from "./CommentGet";
 import ForumGet from "./ForumGet";
 import ForumPost from "./ForumPost";
 
@@ -9,7 +8,6 @@ const Discussion = () => {
       <div>DiscussionForum</div>
       <ForumPost />
       <ForumGet />
-      {/* <CommentGet/> */}
     </>
   );
 };
