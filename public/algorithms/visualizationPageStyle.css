@@ -3,9 +3,11 @@
 body {
   font: 100% Verdana, Arial, Helvetica, sans-serif;
   /*background: #666666; */
-  margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+  margin: 0;
+  /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
   padding: 0;
-  text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+  text-align: center;
+  /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
   color: #000000;
   min-height: 100% !important;
 }
@@ -18,7 +20,8 @@ body {
 .VisualizationMainPage #container {
   background: #ffffff;
   /*margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
-  text-align: left; /* this overrides the text-align: center on the body element. */
+  text-align: left;
+  /* this overrides the text-align: center on the body element. */
 }
 
 .VisualizationMainPage #algoControlSection {
@@ -56,8 +59,10 @@ body {
 
 .VisualizationMainPage #container {
   background: #ffffff;
-  margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
-  text-align: left; /* this overrides the text-align: center on the body element. */
+  margin: 0 auto;
+  /* the auto margins (in conjunction with a width) center the page */
+  text-align: left;
+  /* this overrides the text-align: center on the body element. */
 }
 
 .VisualizationMainPage #footer A:visited {
@@ -93,6 +98,7 @@ body {
   background: #006633;
   color: #ffcc33;
 }
+
 .VisualizationMainPage #footer p {
   margin: 0;
   padding: 10px 0;
@@ -109,11 +115,12 @@ EM {
   padding: 5px 0;
 }
 
-#AlgorithmSpecificControls > td {
+#AlgorithmSpecificControls>td {
   margin-right: 25px;
   margin-left: 10px;
 }
-#AlgorithmSpecificControls > td:nth-child(2n) {
+
+#AlgorithmSpecificControls>td:nth-child(2n) {
   margin-right: 55px;
 }
 
