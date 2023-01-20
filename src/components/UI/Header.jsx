@@ -38,6 +38,9 @@ const Header = () => {
                 <li className="scroll-to-section">
                   <Link to="/contests">Contests</Link>
                 </li>
+                <li className="scroll-to-section">
+                  <Link to="/analyze">Analyze</Link>
+                </li>
                 <Link to="/profile">
                   <img src={profile} height="40" width="40" alt="" />
                 </Link>

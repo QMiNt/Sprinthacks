@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Build.css";
 import { BlocklyWorkspace } from "react-blockly";
 import Blockly from "blockly";
 import { javascriptGenerator } from "blockly/javascript";
@@ -222,7 +221,6 @@ const Build = () => {
       <BlocklyWorkspace
         toolboxConfiguration={toolboxCategories}
         initialXml={initialXml}
-        className="fill-height"
         workspaceConfiguration={{
           grid: {
             spacing: 20,

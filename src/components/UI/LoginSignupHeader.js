@@ -38,6 +38,9 @@ const Header = () => {
                 <li className="scroll-to-section">
                   <Link to="/contests">Contests</Link>
                 </li>
+                <li className="scroll-to-section">
+                  <Link to="/analyze">Analyze</Link>
+                </li>
                 <li>
                   <div className="gradient-button">
                     <a id="modal_trigger" href="#modal">

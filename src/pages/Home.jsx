@@ -1,8 +1,7 @@
 import React from "react";
-import "./Home.css";
 import { Link } from "react-router-dom";
 
-import banner from "../images/slider-dec.png";
+import banner from "../images/title-img.png";
 import heading from "../images/heading-line-dec.png";
 import about from "../images/about-right-dec.png";
 import quote from "../images/quote.png";
