@@ -40,6 +40,8 @@ import TuringMachine from "./components/Algorithms/Visualize/VizAlgorithms/Turin
 import Graph from "./components/Algorithms/Visualize/VizAlgorithms/Graph/graph";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CommentGet from "./components/Algorithms/Discuss/CommentGet";
+import CommentPost from "./components/Algorithms/Discuss/CommentPost";
 
 
 function App() {
@@ -100,6 +102,7 @@ function App() {
           />
           <Route path="/algorithms/visualize/15puzzle" element={<Puzzle />} />
           <Route path="/algorithms/visualize/graph" element={<Graph />} />
+          <Route path="comments" element={<CommentGet />} />
         </Routes>
         <Footer />
       </Router>

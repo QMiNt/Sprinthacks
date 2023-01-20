@@ -5,10 +5,74 @@ import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-// import { Button, CardActionArea, CardActions } from "@mui/material";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import CommentIcon from "@mui/icons-material/Comment";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { Button } from "@mui/material";
+import CommentPost from "./CommentPost";
+import { Link } from "react-router-dom";
 
 export default function ForumGet() {
+  const [open, setOpen] = React.useState(false);
   const [card, setCard] = useState([]);
+  let userid = sessionStorage.getItem("user_id");
+  const [values, setValues] = useState({
+    owner: userid,
+    group_post: 1,
+    body: "",
+  });
+
+  const handleChanges = (event) => {
+    setValues({
+      ...values,
+      [event.target.name]: event.target.value,
+    });
+    console.log(values);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      title: data.get("title"),
+      body: data.get("body"),
+    });
+    createcomment();
+  };
+
+  async function createcomment() {
+    try {
+      let token = sessionStorage.getItem("token");
+      let result = await fetch(
+        "https://hacknova2.pythonanywhere.com/feed/comments/",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            owner: values.owner,
+            body: values.body,
+            group_post: values.group_post,
+          }),
+          headers: {
+            Authorization: `token ${token}`,
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      result = await result.json();
+      console.log(result);
+    } catch (error) {
+      console.log("Error" + error);
+    }
+  }
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   useEffect(() => {
     (async () => {
@@ -73,59 +137,86 @@ export default function ForumGet() {
                       src={post.images_post}
                     />
                     <CardContent>
-                      <Typography
-                        style={{ color: "black" }}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
+                      <div style={{ display: "flex", flexDirection: "row" }}>
+                        <h2>Posted by:&nbsp;</h2>
+                        <Typography
+                          style={{ color: "black" }}
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                        >
+                          {post.owner.username}
+                        </Typography>
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "row" }}>
+                        <h2>Title:&nbsp;</h2>
+                        <Typography
+                          style={{ color: "black" }}
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                        >
+                          {post.title}
+                        </Typography>
+                      </div>
+                      <div style={{ display: "flex", flexDirection: "row" }}>
+                        <h2>Content:&nbsp;</h2>
+                        <Typography
+                          style={{ color: "black" }}
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                        >
+                          {post.body}
+                        </Typography>
+                      </div>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "row",
+                          justifyContent: "space-around",
+                        }}
                       >
-                        {post.owner.username}
-                      </Typography>
-                      <h2>Title</h2>
-                      <Typography
-                        style={{ color: "black" }}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                      >
-                        {post.title}
-                      </Typography>
-                      <h2>Content</h2>
-                      <Typography
-                        style={{ color: "black" }}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                      >
-                        {post.body}
-                      </Typography>
-                      <h2>Likes</h2>
-                      <Typography
-                        style={{ color: "black" }}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                      >
-                        {post.like_on_post_count}
-                      </Typography>
-                      <h2>Comments</h2>
-                      <Typography
-                        style={{ color: "black" }}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                      >
-                        {post.comment_on_post_count}
-                      </Typography>
-                      <h2>Votes</h2>
-                      <Typography
-                        style={{ color: "black" }}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                      >
-                        {post.votes_on_post}
-                      </Typography>
+                        <div>
+                          <Button>
+                            <FavoriteIcon />
+                          </Button>
+                          <Typography
+                            style={{ color: "black" }}
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                          >
+                            {post.like_on_post_count}
+                          </Typography>
+                        </div>
+                        <div>
+                          <Link to="/comments">
+                            <CommentIcon />
+                            </Link>
+                          <Typography
+                            style={{ color: "black" }}
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                          >
+                            {post.comment_on_post_count}
+                          </Typography>
+                        </div>
+                        <div>
+                          <Button>
+                            <ThumbUpIcon />
+                          </Button>
+                          <Typography
+                            style={{ color: "black" }}
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                          >
+                            {post.votes_on_post}
+                          </Typography>
+                        </div>
+                      </div>
                     </CardContent>
                   </Card>
                 </Grid>
