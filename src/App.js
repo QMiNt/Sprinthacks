@@ -8,6 +8,9 @@ import ScrollToTop from "./components/UI/ScrollToTop";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+
+import LoginSignupHeader from "./components/UI/LoginSignupHeader"
+
 import NoMatch from "./pages/NoMatch";
 import Profile from "./pages/Profile";
 
@@ -38,6 +41,7 @@ import Graph from "./components/Algorithms/Visualize/VizAlgorithms/Graph/graph";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
 function App() {
   useEffect(() => {
     alanBtn({
@@ -50,9 +54,12 @@ function App() {
         <Header />
         <ScrollToTop />
         <Routes>
+          <Route path="/login" element={<><LoginSignupHeader/><Login /></>} />
+          <Route path="/signup" element={<><LoginSignupHeader/><Signup /></>} />
+
+          <Route path="/algorithms/discuss" element={<Discussion />} />
+          
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<NoMatch />} />
 
