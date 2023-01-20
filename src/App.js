@@ -102,7 +102,7 @@ function App() {
           />
           <Route path="/algorithms/visualize/15puzzle" element={<Puzzle />} />
           <Route path="/algorithms/visualize/graph" element={<Graph />} />
-          <Route path="comments" element={<><CommentPost/><CommentGet /></>} />
+          <Route path="/comments/:id" element={<><CommentPost/><CommentGet /></>} />
         </Routes>
         <Footer />
       </Router>

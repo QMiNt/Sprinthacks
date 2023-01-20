@@ -4,17 +4,18 @@ import CardContent from "@mui/material/CardContent";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
+import { useParams } from "react-router-dom";
 
 const CommentGet = () => {
   const [card, setCard] = useState([]);
-
+  const { id } = useParams();
   useEffect(() => {
     (async () => {
       let posts;
       let token = sessionStorage.getItem("token");
       try {
         let response = await fetch(
-          "https://hacknova2.pythonanywhere.com/feed/comments/",
+          `https://hacknova2.pythonanywhere.com/feed/comments/${id}`,
           {
             method: "GET",
             headers: {

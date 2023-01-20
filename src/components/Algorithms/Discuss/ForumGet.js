@@ -12,14 +12,7 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export default function ForumGet() {
-  const [open, setOpen] = React.useState(false);
   const [card, setCard] = useState([]);
-  let userid = sessionStorage.getItem("user_id");
-  const [values, setValues] = useState({
-    owner: userid,
-    group_post: 1,
-    body: "",
-  });
 
   useEffect(() => {
     (async () => {
@@ -49,10 +42,7 @@ export default function ForumGet() {
 
   return (
     <>
-      <Grid
-        container
-        className="display"
-      >
+      <Grid container className="display">
         <Box ml={5} mr={5} mt={3} pt={3} mb={1} pb={1}>
           <Grid
             container
@@ -132,9 +122,9 @@ export default function ForumGet() {
                           </Typography>
                         </div>
                         <div>
-                          <Link to="/comments">
+                          <Link to={{ pathname: "/comments/" + post.id }}>
                             <CommentIcon />
-                            </Link>
+                          </Link>
                           <Typography
                             style={{ color: "black" }}
                             gutterBottom
