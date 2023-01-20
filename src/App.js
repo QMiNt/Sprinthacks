@@ -37,6 +37,7 @@ import Graph from "./components/Algorithms/Visualize/VizAlgorithms/Graph/graph";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CommentGet from "./components/Algorithms/Discuss/CommentGet";
 import CommentPost from "./components/Algorithms/Discuss/CommentPost";
+import Csv from "./pages/Csv";
 
 function App() {
   useEffect(() => {
@@ -86,6 +87,34 @@ function App() {
           <Route path="/explain" element={<Explain />} />
 
           <Route path="/contests" element={<Contests />} />
+          
+          <Route
+            path="/algorithms/visualize/pathfinder"
+            element={<Pathfinder />}
+          />
+          <Route path="/algorithms/visualize/prime" element={<Seive />} />
+          <Route path="/algorithms/visualize/sort" element={<Sort />} />
+          <Route path="/algorithms/visualize/nqueen" element={<Queen />} />
+          <Route
+            path="/algorithms/visualize/convexhull"
+            element={<ConvexHull />}
+          />
+          <Route
+            path="/algorithms/visualize/binarysearch"
+            element={<BinarySearch />}
+          />
+          <Route
+            path="/algorithms/visualize/recursivesort"
+            element={<RecursiveSort />}
+          />
+          <Route
+            path="/algorithms/visualize/turing"
+            element={<TuringMachine />}
+          />
+          <Route path="/algorithms/visualize/15puzzle" element={<Puzzle />} />
+          <Route path="/algorithms/visualize/graph" element={<Graph />} />
+          <Route path="/comments/:id" element={<><CommentPost/><CommentGet /></>} />
+          <Route path="/csv" element={<><Csv /></>} />
         </Routes>
         <Footer />
       </Router>
