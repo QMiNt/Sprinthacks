@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import profile from "../images/pfp.png";
 
 const Profile = () => {
   const [card, setCard] = useState([]);
@@ -39,7 +38,7 @@ const Profile = () => {
               <div className="card">
                 {card.map((post, index) => {
                   return (
-                    <div className="card-body">
+                    <div className="card-body" key={index}>
                       <div className="media align-items-center mb-4">
                         <img
                           className="mr-3"

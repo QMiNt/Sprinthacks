@@ -12,7 +12,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 export default function ForumPost() {
   let userid = sessionStorage.getItem("user_id");
-  let token = sessionStorage.getItem("token");
+  // let token = sessionStorage.getItem("token");
   const [open, setOpen] = React.useState(false);
   // const [images_post, setImages_post] = React.useState(null);
 
