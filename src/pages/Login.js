@@ -116,12 +116,12 @@ export default function Login() {
                       className="btn login-form__btn submit w-100"
                       type="submit"
                     >
-                      Sign In
+                      Login
                     </button>
                   </form>
                   <p className="mt-5 login-form__footer">
                     Dont have an account?
-                    <Link to="/signup" className="text-primary">
+                    <Link to="/" className="text-primary">
                       Sign Up
                     </Link>
                     now

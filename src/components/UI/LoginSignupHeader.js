@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo-text.png";
-import profile from "../../images/pfp.png";
 
 const Header = () => {
   return (
@@ -19,7 +18,7 @@ const Header = () => {
               </a>
               <ul className="nav">
                 <li className="scroll-to-section">
-                  <Link to="/" className="active">
+                  <Link to="/home" className="active">
                     Home
                   </Link>
                 </li>
@@ -42,11 +41,13 @@ const Header = () => {
                   <Link to="/analyze">Analyze</Link>
                 </li>
                 <li>
-                  <div className="gradient-button">
-                    <a id="modal_trigger" href="#modal">
-                      <i className="fa fa-sign-in-alt"></i> Sign In Now
-                    </a>
-                  </div>
+                  <Link to="/" style={{textDecoration:"none"}}>
+                    <div className="gradient-button">
+                      <a id="modal_trigger">
+                        <i className="fa fa-sign-in-alt"></i> Sign In Now
+                      </a>
+                    </div>
+                  </Link>
                 </li>
               </ul>
             </nav>

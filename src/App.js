@@ -49,47 +49,47 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
+        
         <ScrollToTop />
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<><LoginSignupHeader/><Login /></>} />
+          <Route path="/" element={<><LoginSignupHeader/><Signup /></>} />
 
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/home" element={<><Header /><Home /></>} />
+          <Route path="/profile" element={<><Header /><Profile /></>} />
           <Route path="*" element={<NoMatch />} />
 
-          <Route path="/build" element={<Build />} />
-          <Route path="/visualize" element={<Visualize />} />
+          <Route path="/build" element={<><Header /><Build /></>} />
+          <Route path="/visualize" element={<><Header /><Visualize /></>} />
 
-          <Route path="/visualize/prime" element={<Seive />} />
-          <Route path="/visualize/nqueens" element={<Queen />} />
-          <Route path="/visualize/pathfinder" element={<Pathfinder />} />
-          <Route path="/visualize/sort" element={<Sort />} />
-          <Route path="/visualize/convexhull" element={<ConvexHull />} />
-          <Route path="/visualize/binarysearch" element={<BinarySearch />} />
-          <Route path="/visualize/recursivesort" element={<RecursiveSort />} />
-          <Route path="/visualize/turing" element={<TuringMachine />} />
-          <Route path="/visualize/puzzle" element={<Puzzle />} />
-          <Route path="/visualize/graph" element={<Graph />} />
+          <Route path="/visualize/prime" element={<><Header /><Seive /></>} />
+          <Route path="/visualize/nqueens" element={<><Header /><Queen /></>} />
+          <Route path="/visualize/pathfinder" element={<><Header /><Pathfinder /></>} />
+          <Route path="/visualize/sort" element={<><Header /><Sort /></>} />
+          <Route path="/visualize/convexhull" element={<><Header /><ConvexHull /></>} />
+          <Route path="/visualize/binarysearch" element={<><Header /><BinarySearch /></>} />
+          <Route path="/visualize/recursivesort" element={<><Header /><RecursiveSort /></>} />
+          <Route path="/visualize/turing" element={<><Header /><TuringMachine /></>} />
+          <Route path="/visualize/puzzle" element={<><Header /><Puzzle /></>} />
+          <Route path="/visualize/graph" element={<><Header /><Graph /></>} />
 
-          <Route path="/discuss" element={<Discussion />} />
+          <Route path="/discuss" element={<><Header /><Discussion /></>} />
           <Route
             path="/comments/:id"
             element={
-              <>
+              <><Header/>
                 <CommentPost />
                 <CommentGet />
               </>
             }
           />
 
-          <Route path="/explain" element={<Explain />} />
+          <Route path="/explain" element={<><Header /><Explain /></>} />
 
-          <Route path="/contests" element={<Contests />} />
+          <Route path="/contests" element={<><Header /><Contests /></>} />
 
-          <Route path="/analyze" element={<Analyze />} />
-          <Route path="/explain" element={<Explain />} />
+          <Route path="/analyze" element={<><Header /><Analyze /></>} />
+          <Route path="/explain" element={<><Header /><Explain /></>} />
         </Routes>
         <Footer />
       </Router>
