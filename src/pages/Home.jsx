@@ -46,7 +46,7 @@ const Home = () => {
                           </Link>
                         </div>
                         <div className="white-button scroll-to-section" style={{borderStyle:"solid", borderColor:"white", borderRadius:"20px"}}>
-                          <Link to="/visualize" classname="gradient-button">
+                          <Link to="/visualize" className="gradient-button">
                             Visualize <i className="fa fa-arrow-right"></i>
                           </Link>
                         </div>
