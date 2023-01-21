@@ -1,10 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import React, { useState } from "react";
 import Grid from "@mui/material/Grid";
 
 const Explain = () => {
@@ -12,7 +6,6 @@ const Explain = () => {
   const [values, setValues] = useState({
     text: "",
   });
-  const generated_code = sessionStorage.getItem("Code");
 
   const handleChanges = (event) => {
     setValues({
@@ -94,9 +87,6 @@ const Explain = () => {
             </button>
           </form>
         </Grid>
-        {code.map((value, index) => {
-        return <li key={index}>lkj</li>
-      })}
         <Grid item xs={12} sm={8} md={5} elevation={6} >
           <h3 style={{margin:"3.5rem 0 0 0"}}>Explaination</h3>
           <textarea

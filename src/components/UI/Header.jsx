@@ -46,7 +46,7 @@ const Header = () => {
               </Link>
               <ul className="nav">
                 <li className="scroll-to-section">
-                  <Link to="/" className="active">
+                  <Link to="/home" className="active">
                     Home
                   </Link>
                 </li>
