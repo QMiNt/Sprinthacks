@@ -46,6 +46,7 @@ const Explain = () => {
         });
     } catch (error) {
       console.log("Error" + error);
+      setCode("No explaination found")
     }
   }
 
