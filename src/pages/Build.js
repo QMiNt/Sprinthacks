@@ -221,6 +221,7 @@ const Build = () => {
       <BlocklyWorkspace
         toolboxConfiguration={toolboxCategories}
         initialXml={initialXml}
+        className="fill-height"
         workspaceConfiguration={{
           grid: {
             spacing: 20,

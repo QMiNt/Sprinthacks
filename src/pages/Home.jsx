@@ -41,15 +41,12 @@ const Home = () => {
                       </div>
                       <div className="col-lg-12">
                         <div className="white-button first-button scroll-to-section">
-                          <Link to="/algorithms/build">
+                          <Link to="/build">
                             Build <i className="fa fa-arrow-right"></i>
                           </Link>
                         </div>
                         <div className="white-button scroll-to-section">
-                          <Link
-                            to="/algorithms/visualize"
-                            classname="gradient-button"
-                          >
+                          <Link to="/visualize" classname="gradient-button">
                             Visualizie <i className="fa fa-arrow-right"></i>
                           </Link>
                         </div>
@@ -296,130 +293,6 @@ const Home = () => {
                                       src="assets/images/client-image.jpg"
                                       alt=""
                                     />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div>
-                            <div className="thumb">
-                              <div className="row">
-                                <div className="col-lg-12">
-                                  <div className="client-content">
-                                    <img src="assets/images/quote.png" alt="" />
-                                    <p>
-                                      “CTO, Lorem ipsum dolor sit amet,
-                                      consectetur adpiscing elit, sed do eismod
-                                      tempor idunte ut labore et dolore magna
-                                      aliqua darwin kengan lorem ipsum dolor sit
-                                      amet, consectetur picing elit massive big
-                                      blasta.”
-                                    </p>
-                                  </div>
-                                  <div className="down-content">
-                                    <img
-                                      src="assets/images/client-image.jpg"
-                                      alt=""
-                                    />
-                                    <div className="right-content">
-                                      <h4>Jake H. Nyo</h4>
-                                      <span>CTO of Digital Company</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div>
-                            <div className="thumb">
-                              <div className="row">
-                                <div className="col-lg-12">
-                                  <div className="client-content">
-                                    <img src="assets/images/quote.png" alt="" />
-                                    <p>
-                                      “May, Lorem ipsum dolor sit amet,
-                                      consectetur adpiscing elit, sed do eismod
-                                      tempor idunte ut labore et dolore magna
-                                      aliqua darwin kengan lorem ipsum dolor sit
-                                      amet, consectetur picing elit massive big
-                                      blasta.”
-                                    </p>
-                                  </div>
-                                  <div className="down-content">
-                                    <img
-                                      src="assets/images/client-image.jpg"
-                                      alt=""
-                                    />
-                                    <div className="right-content">
-                                      <h4>May C.</h4>
-                                      <span>Founder of Catherina Co.</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div>
-                            <div className="thumb">
-                              <div className="row">
-                                <div className="col-lg-12">
-                                  <div className="client-content">
-                                    <img src="assets/images/quote.png" alt="" />
-                                    <p>
-                                      “Lorem ipsum dolor sit amet, consectetur
-                                      adpiscing elit, sed do eismod tempor
-                                      idunte ut labore et dolore magna aliqua
-                                      darwin kengan lorem ipsum dolor sit amet,
-                                      consectetur picing elit massive big
-                                      blasta.”
-                                    </p>
-                                  </div>
-                                  <div className="down-content">
-                                    <img
-                                      src="assets/images/client-image.jpg"
-                                      alt=""
-                                    />
-                                    <div className="right-content">
-                                      <h4>Random Staff</h4>
-                                      <span>Manager, Digital Company</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div>
-                            <div className="thumb">
-                              <div className="row">
-                                <div className="col-lg-12">
-                                  <div className="client-content">
-                                    <img src="assets/images/quote.png" alt="" />
-                                    <p>
-                                      “Mark, Lorem ipsum dolor sit amet,
-                                      consectetur adpiscing elit, sed do eismod
-                                      tempor idunte ut labore et dolore magna
-                                      aliqua darwin kengan lorem ipsum dolor sit
-                                      amet, consectetur picing elit massive big
-                                      blasta.”
-                                    </p>
-                                  </div>
-                                  <div className="down-content">
-                                    <img
-                                      src="assets/images/client-image.jpg"
-                                      alt=""
-                                    />
-                                    <div className="right-content">
-                                      <h4>Mark Am</h4>
-                                      <span>CTO, Amber Do Company</span>
-                                    </div>
                                   </div>
                                 </div>
                               </div>

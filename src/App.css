@@ -274,7 +274,6 @@ body {
 .header-area {
     background-color: #fff;
     border-bottom: 1px solid rgba(42, 42, 42, 0.2);
-    position: absolute;
     left: 0px;
     right: 0px;
     z-index: 100;
@@ -283,7 +282,6 @@ body {
     -moz-transition: all .5s ease 0s;
     -o-transition: all .5s ease 0s;
     transition: all .5s ease 0s;
-    position: fixed;
 }
 
 .header-area .main-nav {
@@ -811,9 +809,9 @@ preloader
 
 .main-banner {
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     background-size: cover;
-    padding: 250px 120px 150px 120px;
+    padding: 0px 80px 0px 80px;
     position: relative;
     overflow: hidden;
 }
@@ -1275,13 +1273,10 @@ preloader
 }
 
 footer {
-    background-image: url(./images/footer-bg.png);
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-top: 130px;
-    padding-top: 300px;
-    padding-bottom: 60px;
+    background: linear-gradient(rgb(27, 202, 255), rgb(0, 162, 255));
+    margin-top: 80px;
+    padding: 0px 0px 20px 0px;
+    border-radius: 48px 48px 0px 0px;
 }
 
 footer .section-heading {
@@ -1375,8 +1370,7 @@ footer #search button:hover {
 
 footer .copyright-text p {
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 0px;
+    margin: 20px 0px;
     color: #fff;
 }
 

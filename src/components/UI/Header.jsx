@@ -14,9 +14,9 @@ const Header = () => {
         <div className="row">
           <div className="col-12">
             <nav className="main-nav">
-              <a href="index.html" className="logo">
+              <Link to="/" className="logo">
                 <img src={logo} alt="logo" />
-              </a>
+              </Link>
               <ul className="nav">
                 <li className="scroll-to-section">
                   <Link to="/" className="active">

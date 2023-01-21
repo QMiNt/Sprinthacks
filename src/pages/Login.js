@@ -60,7 +60,7 @@ export default function Login() {
           JSON.parse(JSON.stringify(result.user.id))
         );
         sessionStorage.setItem("token", result.token);
-        history("/discussionforum");
+        history("/profile");
       } else {
         Swal.fire("Oops!!", "Some error while login", "error");
       }
