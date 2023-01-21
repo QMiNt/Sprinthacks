@@ -42,7 +42,7 @@ import Analyze from "./pages/Analyze";
 function App() {
   useEffect(() => {
     alanBtn({
-      key: "1cd1c991b78573fc8c9c034eaa1d05ef2e956eca572e1d8b807a3e2338fdd0dc/stage",
+      key: "3b12133609113b0c558d934a3769129c2e956eca572e1d8b807a3e2338fdd0dc/stage",
     });
   }, []);
 
