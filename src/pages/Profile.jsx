@@ -1,7 +1,51 @@
 import React, { useState, useEffect } from "react";
-import profile from "../images/pfp.png";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  Cell,
+} from "recharts";
+import badge1 from "../images/badge1.png";
+import badge2 from "../images/badge2.png";
+import badge3 from "../images/badge3.png";
 
 const Profile = () => {
+  const data = [
+    {
+      name: "Quiz 1",
+      Score: 3,
+    },
+    {
+      name: "Quiz 2",
+      Score: 3,
+    },
+    {
+      name: "Quiz 3",
+      Score: 2,
+    },
+    {
+      name: "Quiz 4",
+      Score: 1,
+    },
+    {
+      name: "Quiz 5",
+      Score: 1,
+    },
+    {
+      name: "Quiz 6",
+      Score: 1,
+    },
+    {
+      name: "Quiz 7",
+      Score: 2,
+    },
+  ];
+  const barColors = ["#92A3FD", "#C58BF2"];
+
   const [card, setCard] = useState([]);
   let token = sessionStorage.getItem("token");
   useEffect(() => {
@@ -36,56 +80,23 @@ const Profile = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-4 col-xl-3">
-              <div className="card">
+              <div className="pricing-item-regular">
                 {card.map((post, index) => {
                   return (
-                    <div className="card-body">
-                      <div className="media align-items-center mb-4">
-                        <img
-                          className="mr-3"
-                          src={post.profile_pic}
-                          width="80"
-                          height="80"
-                          alt="profile-img"
-                        />
-                        <div className="media-body">
-                          <h3 className="mb-0">{post.name}</h3>
-                          {/* <p className="text-muted mb-0">Jain</p> */}
-                        </div>
+                    <div>
+                      <span className="price">
+                        <img src={badge2} alt="" />
+                      </span>
+                      <h4>{post.name}</h4>
+                      <div className="icon">
+                        <img src={post.profile_pic} alt="" />
                       </div>
-                      <div className="row mb-5">
-                        <div className="col">
-                          <div className="card card-profile text-center">
-                            <span className="mb-1 text-primary">
-                              <i className=""></i>
-                            </span>
-                          </div>
-                        </div>
-                        <div className="col">
-                          <div className="card card-profile text-center">
-                            <span className="mb-1 text-warning">
-                              <i className=""></i>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <h4>About Me</h4>
-                      <p className="text-muted">{post.about}</p>
-                      <h4>Interests</h4>
-                      <p className="text-muted">{post.interests}</p>
-                      <h4>Education</h4>
-                      <p className="text-muted">{post.education}</p>
-                      <ul className="card-profile__info">
-                        <li className="mb-1">
-                          <strong className="text-dark mr-4">
-                            Designation
-                          </strong>
-                          <span>{post.designation}</span>
-                        </li>
-                        <li>
-                          <strong className="text-dark mr-4">Email</strong>
-                          <span>{post.email}</span>
-                        </li>
+                      <ul>
+                        <li>{post.about}</li>
+                        <li>{post.interests}</li>
+                        <li>{post.education}</li>
+                        <li>{post.designation}</li>
+                        <li>{post.email}</li>
                       </ul>
                     </div>
                   );
@@ -94,8 +105,66 @@ const Profile = () => {
             </div>
             <div className="col-lg-8 col-xl-9">
               <div className="card">
-                <div className="card-body"></div>
+                <div className="card-body profile-card">
+                  <div>
+                    <h4>Contributor</h4>
+                    <img src={badge1} />
+                  </div>
+                  <div>
+                    <h4>Expert</h4>
+                    <img src={badge2} />
+                  </div>
+                  <div>
+                    <h4>Grand Master</h4>
+                    <img src={badge3} />
+                  </div>
+                </div>
               </div>
+            </div>
+            <div className="col-lg-8 col-xl-9 bar-chart">
+              <BarChart
+                width={700}
+                height={300}
+                data={data}
+                barCategoryGap={15}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}
+                padding={{
+                  right: 30,
+                  left: 20,
+                }}
+              >
+                <defs>
+                  <linearGradient
+                    id="colorUv"
+                    x1="100%"
+                    y1="100%"
+                    x2="0%"
+                    y2="100%"
+                    spreadMethod="reflect"
+                  >
+                    <stop offset="0" stopColor="#C58BF2" />
+                    <stop offset="1" stopColor="#EEA4CE" />
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="2 2" />
+                <XAxis dataKey="name" />
+                <YAxis dataKey="Score" />
+                <Tooltip />
+                <Legend />
+                <Bar
+                  dataKey="Score"
+                  /*fill="url(#colorUv)"*/ radius={[20, 20, 20, 20]}
+                >
+                  {data.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={barColors[index % 2]} />
+                  ))}
+                </Bar>
+              </BarChart>
             </div>
           </div>
         </div>

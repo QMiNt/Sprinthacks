@@ -66,11 +66,12 @@ const Contests = () => {
 
   return (
     <>
-      <div>
+      <div className="form-group">
         <select
           placeholder="Select Platform"
           onChange={handleChange}
           value={value}
+          className="form-control"
         >
           <option value="hacker_rank">HackerRank</option>
           <option value="hacker_earth">HackerEarth</option>
@@ -82,8 +83,13 @@ const Contests = () => {
           <option value="kick_start">Kick Start</option>
           <option value="none">None</option>
         </select>
-        <input type="checkbox" isChecked={checked} onChange={handleCheck} />
-        In 24 hours?
+        <input
+          type="checkbox"
+          className="form-check-input my-4 ms-4"
+          isChecked={checked}
+          onChange={handleCheck}
+        />
+        <label className="my-4 mx-2">In 24 hours?</label>
       </div>
       <div>
         <div className="table-responsive">

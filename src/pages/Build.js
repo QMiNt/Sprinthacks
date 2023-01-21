@@ -69,8 +69,8 @@ const Build = () => {
             type: "controls_whileUntil",
           },
           {
-            'kind': 'block',
-            'type': 'controls_flow_statements',
+            kind: "block",
+            type: "controls_flow_statements",
           },
         ],
       },
@@ -87,50 +87,50 @@ const Build = () => {
             },
           },
           {
-            'kind': 'block',
-            'type': 'math_single',
-            'inputs': {
-              'NUM': {
-                'shadow': {
-                  'type': 'math_number',
-                  'fields': {
-                    'NUM': 9,
+            kind: "block",
+            type: "math_single",
+            inputs: {
+              NUM: {
+                shadow: {
+                  type: "math_number",
+                  fields: {
+                    NUM: 9,
                   },
                 },
               },
             },
           },
           {
-            'kind': 'block',
-            'type': 'math_number_property',
-            'inputs': {
-              'NUMBER_TO_CHECK': {
-                'shadow': {
-                  'type': 'math_number',
-                  'fields': {
-                    'NUM': 0,
+            kind: "block",
+            type: "math_number_property",
+            inputs: {
+              NUMBER_TO_CHECK: {
+                shadow: {
+                  type: "math_number",
+                  fields: {
+                    NUM: 0,
                   },
                 },
               },
             },
           },
           {
-            'kind': 'block',
-            'type': 'math_arithmetic',
-            'inputs': {
-              'A': {
-                'shadow': {
-                  'type': 'math_number',
-                  'fields': {
-                    'NUM': 1,
+            kind: "block",
+            type: "math_arithmetic",
+            inputs: {
+              A: {
+                shadow: {
+                  type: "math_number",
+                  fields: {
+                    NUM: 1,
                   },
                 },
               },
-              'B': {
-                'shadow': {
-                  'type': 'math_number',
-                  'fields': {
-                    'NUM': 1,
+              B: {
+                shadow: {
+                  type: "math_number",
+                  fields: {
+                    NUM: 1,
                   },
                 },
               },
@@ -156,33 +156,33 @@ const Build = () => {
             type: "text_print",
           },
           {
-            'kind': 'label',
-            'text': 'Input/Output:',
-            'web-class': 'ioLabel',
+            kind: "label",
+            text: "Input/Output:",
+            "web-class": "ioLabel",
           },
           {
-            'kind': 'block',
-            'type': 'text_print',
-            'inputs': {
-              'TEXT': {
-                'shadow': {
-                  'type': 'text',
-                  'fields': {
-                    'TEXT': 'abc',
+            kind: "block",
+            type: "text_print",
+            inputs: {
+              TEXT: {
+                shadow: {
+                  type: "text",
+                  fields: {
+                    TEXT: "abc",
                   },
                 },
               },
             },
           },
           {
-            'kind': 'block',
-            'type': 'text_prompt_ext',
-            'inputs': {
-              'TEXT': {
-                'shadow': {
-                  'type': 'text',
-                  'fields': {
-                    'TEXT': 'abc',
+            kind: "block",
+            type: "text_prompt_ext",
+            inputs: {
+              TEXT: {
+                shadow: {
+                  type: "text",
+                  fields: {
+                    TEXT: "abc",
                   },
                 },
               },
@@ -191,19 +191,19 @@ const Build = () => {
         ],
       },
       {
-        'kind': 'sep',
+        kind: "sep",
       },
       {
-        'kind': 'category',
-        'name': 'Variables',
-        'categorystyle': 'variable_category',
-        'custom': 'VARIABLE',
+        kind: "category",
+        name: "Variables",
+        categorystyle: "variable_category",
+        custom: "VARIABLE",
       },
       {
-        'kind': 'category',
-        'name': 'Functions',
-        'categorystyle': 'procedure_category',
-        'custom': 'PROCEDURE',
+        kind: "category",
+        name: "Functions",
+        categorystyle: "procedure_category",
+        custom: "PROCEDURE",
       },
     ],
   };
@@ -217,7 +217,7 @@ const Build = () => {
   }
 
   return (
-    <>
+    <div className="blockly-container">
       <BlocklyWorkspace
         toolboxConfiguration={toolboxCategories}
         initialXml={initialXml}
@@ -234,28 +234,33 @@ const Build = () => {
         onXmlChange={setXml}
       />
       {/* <pre id="generated-xml">{xml}</pre> */}
-      <h6>JavaScript</h6>
-      <textarea
-        id="code"
-        style={{ height: "200px", width: "400px" }}
-        value={javascriptCode}
-        readOnly
-      ></textarea>
-      <h6>Python</h6>
-      <textarea
-        id="code"
-        style={{ height: "200px", width: "400px" }}
-        value={pythonCode}
-        readOnly
-      ></textarea>
-      <h6>Dart</h6>
-      <textarea
-        id="code"
-        style={{ height: "200px", width: "400px" }}
-        value={dartCode}
-        readOnly
-      ></textarea>
-    </>
+      <div className="lang-container">
+        <h6>JavaScript</h6>
+        <textarea
+          className="form-control"
+          id="code"
+          style={{ height: "200px", width: "400px" }}
+          value={javascriptCode}
+          readOnly
+        ></textarea>
+        <h6>Python</h6>
+        <textarea
+          className="form-control"
+          id="code"
+          style={{ height: "200px", width: "400px" }}
+          value={pythonCode}
+          readOnly
+        ></textarea>
+        <h6>Dart</h6>
+        <textarea
+          id="code"
+          className="form-control"
+          style={{ height: "200px", width: "400px" }}
+          value={dartCode}
+          readOnly
+        ></textarea>
+      </div>
+    </div>
   );
 };
 
