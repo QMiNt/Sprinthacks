@@ -1,5 +1,5 @@
 # Hackanova TCET :
-This is our project made for TCET's 30 Hours Hackathon Technovanza 2023.
+This is our project made for TCET's 30 Hours Hackathon Hackanova 2023.
 
 # We have Branches :
 Website Code :https://github.com/Jay4Codes/Hackanova_EnemiesOfSyntaxx
