@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo-text.png";
-import profile from "../../images/pfp.png";
 
 const Header = () => {
+  const [card, setCard] = useState([]);
+  let token = sessionStorage.getItem("token");
+  useEffect(() => {
+    (async () => {
+      let profile_info;
+      try {
+        let response = await fetch(
+          "https://hacknova2.pythonanywhere.com/login/profilecreate/",
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Token ${token}`,
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+          }
+        );
+        profile_info = await response.json();
+        console.log(profile_info);
+      } catch (error) {
+        console.log("Error" + error);
+        profile_info = [];
+      }
+      setCard(profile_info);
+    })();
+  }, []);
+  console.log(card);
+
   return (
     <header
       className="header-area header-sticky wow slideInDown"
@@ -41,9 +68,18 @@ const Header = () => {
                 <li className="scroll-to-section">
                   <Link to="/analyze">Analyze</Link>
                 </li>
-                <Link to="/profile">
-                  <img src={profile} height="40" width="40" alt="" />
-                </Link>
+                {card.map((post, index) => {
+                  return (
+                    <Link to="/profile" key={index}>
+                      <img
+                        src={post.profile_pic}
+                        height="40"
+                        width="40"
+                        alt=""
+                      />
+                    </Link>
+                  );
+                })}
               </ul>
             </nav>
           </div>
