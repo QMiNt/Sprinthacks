@@ -8,7 +8,6 @@ import Typography from "@mui/material/Typography";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import CommentIcon from "@mui/icons-material/Comment";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export default function ForumGet() {
@@ -69,7 +68,7 @@ export default function ForumGet() {
                     />
                     <CardContent>
                       <div style={{ display: "flex", flexDirection: "row" }}>
-                        <h2>Posted by:&nbsp;</h2>
+                        <h3>Posted by:&nbsp;</h3>
                         <Typography
                           style={{ color: "black" }}
                           gutterBottom
@@ -80,7 +79,7 @@ export default function ForumGet() {
                         </Typography>
                       </div>
                       <div style={{ display: "flex", flexDirection: "row" }}>
-                        <h2>Title:&nbsp;</h2>
+                        <h3>Title:&nbsp;</h3>
                         <Typography
                           style={{ color: "black" }}
                           gutterBottom
@@ -91,7 +90,7 @@ export default function ForumGet() {
                         </Typography>
                       </div>
                       <div style={{ display: "flex", flexDirection: "row" }}>
-                        <h2>Content:&nbsp;</h2>
+                        <h3>Content:&nbsp;</h3>
                         <Typography
                           style={{ color: "black" }}
                           gutterBottom
@@ -109,9 +108,7 @@ export default function ForumGet() {
                         }}
                       >
                         <div>
-                          <Button>
-                            <FavoriteIcon />
-                          </Button>
+                            <FavoriteIcon style={{color:"#0A58CA"}}/>
                           <Typography
                             style={{ color: "black" }}
                             gutterBottom
@@ -135,9 +132,7 @@ export default function ForumGet() {
                           </Typography>
                         </div>
                         <div>
-                          <Button>
-                            <ThumbUpIcon />
-                          </Button>
+                            <ThumbUpIcon style={{color:"#0A58CA"}}/>
                           <Typography
                             style={{ color: "black" }}
                             gutterBottom

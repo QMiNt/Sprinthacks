@@ -50,7 +50,7 @@ const CommentGet = () => {
           >
             {card.map((post, index) => {
               return (
-                <Grid item xs={12} sm={6} md={6} lg={6} key={index}>
+                <Grid item xs={12} sm={4} md={4} lg={6} key={index}>
                   <Card
                     sx={{ maxWidth: 345 }}
                     style={{
@@ -60,6 +60,7 @@ const CommentGet = () => {
                     }}
                   >
                     <CardContent>
+                      <h3>Posted by:</h3>
                       <Typography
                         style={{ color: "black" }}
                         gutterBottom
@@ -68,7 +69,7 @@ const CommentGet = () => {
                       >
                         {post.owner.username}
                       </Typography>
-                      <h2>Body</h2>
+                      <h3>Solution:</h3>
                       <Typography
                         style={{ color: "black" }}
                         gutterBottom

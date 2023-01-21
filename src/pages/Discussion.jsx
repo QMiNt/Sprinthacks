@@ -5,7 +5,6 @@ import ForumPost from "../components/Discuss/ForumPost";
 const Discussion = () => {
   return (
     <>
-      <div>DiscussionForum</div>
       <ForumPost />
       <ForumGet />
     </>
