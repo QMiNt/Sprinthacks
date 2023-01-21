@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { BlocklyWorkspace } from "react-blockly";
-import Blockly from "blockly";
 import { javascriptGenerator } from "blockly/javascript";
 import { pythonGenerator } from "blockly/python";
-import { phpGenerator } from "blockly/php";
-import { luaGenerator } from "blockly/lua";
 import { dartGenerator } from "blockly/dart";
 
 const Build = () => {

@@ -28,7 +28,7 @@ const Header = () => {
       }
       setCard(profile_info);
     })();
-  }, []);
+  }, [token]);
   console.log(card);
 
   return (
@@ -73,9 +73,8 @@ const Header = () => {
                     <Link to="/profile" key={index}>
                       <img
                         src={post.profile_pic}
-                        height="40"
-                        width="40"
                         alt=""
+                        style={{height:"50px", width:"50px", borderRadius:"50px", borderColor:"black"}}
                       />
                     </Link>
                   );

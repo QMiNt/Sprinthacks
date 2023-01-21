@@ -71,7 +71,7 @@ const Profile = () => {
       }
       setCard(profile_info);
     })();
-  }, []);
+  }, [token]);
   console.log(card);
 
   return (
@@ -108,15 +108,15 @@ const Profile = () => {
                 <div className="card-body profile-card">
                   <div>
                     <h4>Contributor</h4>
-                    <img src={badge1} />
+                    <img src={badge1} alt=""/>
                   </div>
                   <div>
                     <h4>Expert</h4>
-                    <img src={badge2} />
+                    <img src={badge2} alt=""/>
                   </div>
                   <div>
                     <h4>Grand Master</h4>
-                    <img src={badge3} />
+                    <img src={badge3} alt=""/>
                   </div>
                 </div>
               </div>
@@ -158,9 +158,9 @@ const Profile = () => {
                 <Legend />
                 <Bar
                   dataKey="Score"
-                  /*fill="url(#colorUv)"*/ radius={[20, 20, 20, 20]}
+                  radius={[20, 20, 20, 20]}
                 >
-                  {data.map((entry, index) => (
+                  {data.map((index) => (
                     <Cell key={`cell-${index}`} fill={barColors[index % 2]} />
                   ))}
                 </Bar>

@@ -31,10 +31,10 @@ const Contests = () => {
       <>
         {contest.map((c, index) => {
           return checked ? (
-            c.in_24_hours == "Yes" && (
+            c.in_24_hours === "Yes" && (
               <tr key={index}>
                 <td>
-                  <a href={c.url} target="_blank">
+                  <a href={c.url} target="_blank" rel="noreferrer">
                     {c.name}
                   </a>
                   ;
@@ -48,7 +48,7 @@ const Contests = () => {
           ) : (
             <tr key={index}>
               <td>
-                <a href={c.url} target="_blank">
+                <a href={c.url} target="_blank" rel="noreferrer">
                   {c.name}
                 </a>
                 ;
@@ -99,7 +99,7 @@ const Contests = () => {
                 <th>Name</th>
                 <th>Start</th>
                 <th>End</th>
-                {value == "all" && <th>Site</th>}
+                {value === "all" && <th>Site</th>}
                 <th>In 24 hours</th>
               </tr>
             </thead>
