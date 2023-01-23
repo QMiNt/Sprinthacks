@@ -13,11 +13,11 @@ Make me a visual part of it and I learn”        --~ Benjamin Franklin
 
 # Introduction
 
-Hola Everyone, This is team The Enemies of Syntaxx which consists of 3 people of each and every stack. We have Rachana and Jay here for React,  and Yash for AI/ML and djanog Backend .
+Hola Everyone, This is team The Enemies of Syntaxx which consists of 3 people. We have Rachana and Jay here for React Js,  and Yash for AI/ML and django Backend.
 
 # Contributors :
-<br />Jay Jain (React) : https://github.com/dishantzaveri
-<br />Rachana Yeldi (React) : [https://github.com/Manan1](https://github.com/Rachana1104)7
+<br />Jay Jain (React) : https://github.com/Jay4Codes
+<br />Rachana Yeldi (React) : https://github.com/Rachana1104
 <br />Yash Joshi (Backend) : https://github.com/joshiyash05
 
 
