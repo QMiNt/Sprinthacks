@@ -1,16 +1,12 @@
 import "./App.css";
 import React, { useEffect } from "react";
-
 import Header from "./components/UI/Header";
 import Footer from "./components/UI/Footer";
 import ScrollToTop from "./components/UI/ScrollToTop";
-
 import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-
+// import Login from "./pages/Login";
+// import Signup from "./pages/Signup";
 import LoginSignupHeader from "./components/UI/LoginSignupHeader";
-
 import NoMatch from "./pages/NoMatch";
 import Profile from "./pages/Profile";
 import Build from "./pages/Build";
@@ -21,7 +17,7 @@ import Explain from "./pages/Explain";
 
 import Contests from "./pages/Contests";
 
-import alanBtn from "@alan-ai/alan-sdk-web";
+// import alanBtn from "@alan-ai/alan-sdk-web";
 
 import Seive from "./components/Visualize/VizAlgorithms/primeComponents/seive";
 import Queen from "./components/Visualize/VizAlgorithms/queenComponents/queen";
@@ -33,18 +29,12 @@ import RecursiveSort from "./components/Visualize/VizAlgorithms/recursiveSortCom
 import TuringMachine from "./components/Visualize/VizAlgorithms/Turing Machine/turingMachine";
 import Puzzle from "./components/Visualize/VizAlgorithms/15puzzleComponents/puzzle";
 import Graph from "./components/Visualize/VizAlgorithms/Graph/graph";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CommentGet from "./components/Discuss/CommentGet";
 import CommentPost from "./components/Discuss/CommentPost";
 import Analyze from "./pages/Analyze";
 
 function App() {
-  useEffect(() => {
-    alanBtn({
-      key: "3b12133609113b0c558d934a3769129c2e956eca572e1d8b807a3e2338fdd0dc/stage",
-    });
-  }, []);
 
   return (
     <div className="App">
@@ -52,16 +42,13 @@ function App() {
         
         <ScrollToTop />
         <Routes>
-          <Route path="/login" element={<><LoginSignupHeader/><Login /></>} />
-          <Route path="/" element={<><LoginSignupHeader/><Signup /></>} />
-
+          {/* <Route path="/login" element={<><LoginSignupHeader/><Login /></>} /> */}
+          <Route path="/" element={<><Header /><Home /></>} />
           <Route path="/home" element={<><Header /><Home /></>} />
           <Route path="/profile" element={<><Header /><Profile /></>} />
           <Route path="*" element={<NoMatch />} />
-
           <Route path="/build" element={<><Header /><Build /></>} />
           <Route path="/visualize" element={<><Header /><Visualize /></>} />
-
           <Route path="/visualize/prime" element={<><Header /><Seive /></>} />
           <Route path="/visualize/nqueens" element={<><Header /><Queen /></>} />
           <Route path="/visualize/pathfinder" element={<><Header /><Pathfinder /></>} />
@@ -72,7 +59,6 @@ function App() {
           <Route path="/visualize/turing" element={<><Header /><TuringMachine /></>} />
           <Route path="/visualize/puzzle" element={<><Header /><Puzzle /></>} />
           <Route path="/visualize/graph" element={<><Header /><Graph /></>} />
-
           <Route path="/discuss" element={<><Header /><Discussion /></>} />
           <Route
             path="/comments/:id"
@@ -85,9 +71,7 @@ function App() {
           />
 
           <Route path="/explain" element={<><Header /><Explain /></>} />
-
           <Route path="/contests" element={<><Header /><Contests /></>} />
-
           <Route path="/analyze" element={<><Header /><Analyze /></>} />
           <Route path="/explain" element={<><Header /><Explain /></>} />
         </Routes>
@@ -96,5 +80,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

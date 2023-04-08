@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../images/logo-text.png";
+import logo from "../../images/logo-no-background.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -9,15 +9,15 @@ const Footer = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="copyright-text">
-              <p>Designed & Developed by Team Enemies of Syntaxx</p>
+              <p>Designed & Developed by Team CODECOPS</p>
             </div>
           </div>
           <div className="col-lg-3">
             <div className="footer-widget">
               <h4>Team</h4>
-              <p>Jay Jain</p>
-              <p>Yash Joshi</p>
-              <p>Rachana Yeldi</p>
+              <p>ADITYA AGARWAL</p>
+              <p>RITIESH BHATIA</p>
+              <p>HIMANSHU BNANSAL</p>
             </div>
           </div>
           <div className="col-lg-3">
@@ -64,7 +64,7 @@ const Footer = () => {
               <h4>Project</h4>
               <div className="logo">
                 <Link to="/">
-                  <img src={logo} alt="logo" />
+                  <img className="logo_footer" src={logo} alt="logo" />
                 </Link>
               </div>
               <p>

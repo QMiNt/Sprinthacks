@@ -29,9 +29,9 @@ const Home = () => {
                   >
                     <div className="row">
                       <div className="col-lg-12">
-                        <h2>VLearn: Visualizing Algorithms</h2>
+                        <h2>CODELABS: Programming Simplified</h2>
                         <p style={{fontSize:"1rem"}}>
-                          VLearn is a web application that allows users to learn
+                          CODELABS is a web application that allows users to learn
                           about algorithms by visualizing them. Users can choose
                           from a variety of algorithms and customize their
                           parameters to see how they work. VLearn also allows
