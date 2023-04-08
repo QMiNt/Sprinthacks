@@ -18,6 +18,8 @@ const Footer = () => {
               <p>ADITYA AGARWAL</p>
               <p>RITIESH BHATIA</p>
               <p>HIMANSHU BNANSAL</p>
+              <p>SOUMYA GUPTA</p>
+
             </div>
           </div>
           <div className="col-lg-3">
